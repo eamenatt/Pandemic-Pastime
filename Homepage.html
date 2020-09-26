@@ -6,72 +6,108 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pandemic Pastime</title>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Compressed CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
         integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
 
-    <!-- Compressed JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
-        integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <!-- Duplicate scripts? -->
+    <!-- Compressed JavaScript
+      <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
 
 
 </head>
 
 <body>
-
-    <div class="top-bar">
-        <h1>What's Cookin'!?</h1>
+    <!-- Header -->
+    <div class="top-bar text-center">
+        <h1>What's Cookin'?</h1>
     </div>
-    <div class="page-intro">
-        <h2>Stuck at home? Let's find some new ideas and recipers with the ingredients you already have lying around!
-        </h2>
+    <div class="page-intro text-center hide">
+        <h3><b>Stuck at home?</b>&nbsp;Let's find some new flavor combos and recipies with the ingredients you already
+            on hand!
+        </h3>
     </div>
 
-    <div class="grid-x">
+    <!-- Home Page / Search Options -->
+    <div id="search-options" class="grid-x">
         <div class="cell large-6">
-            <div class="card">
-                <img src="" alt="">
-                <div class="card-section">
-                    <h3>Flavor pairing by ingredient:</h3>
-                    <p>Enter the ingredients you have laying around the house below and we'll show you the flavor combos
-                        you can make with those items!</p>
+            <div class="card-flex-article-card">
+                <img class="search-img float-center" src="assets/pairings.jpg" alt="food pairings">
+                <div class="card-section ingredients">
+                    <h2 class="article-title text-center">Wine Pairings</h2>
+                    <p class="article-details text-center">Enter a recipe ingredient to find a wine that pairs well with
+                        your meal!</p>
+
+                    <div class="cell large-6 text-center">
+                        <button class="button large" type="button">Wine Pairings Search</button>
+                        <!-- <a href="about.html" class="button large">Flavor Pairings</a> -->
+                    </div>
                 </div>
             </div>
         </div>
         <div class="cell large-6">
-            <div class="card">
-                <img src="" alt="">
-                <div class="card-section">
-                    <h3>recipes by ingredient:</h3>
-                    <p>Enter the ingredients you have laying around the house below and we'll show you the best recipes
+            <div class="card-flex-article-card">
+                <img class="search-img float-center" src="assets/ingredients.jpg" alt="ingredients">
+                <div class="card-section ingredients">
+                    <h2 class="article-title text-center">Recipes by ingredient:</h2>
+                    <p class="article-details text-center">Enter the ingredients you have laying around the house below
+                        and we'll show you the best recipes
                         including those items!</p>
+
+                    <div class="cell large-6 text-center">
+                        <button id="recipe-query" class="button large" type="button">Recipe Search</button>
+                        <!-- <a href="about.html" class="button large">Flavor Pairings</a> -->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="grid-x">
-        <div class="cell large-6">
-            <a href="about.html" class="button">Flavor Pairings</a>
+    
+
+        <div id="search" class="cell large-12">
+            <form class="cell large-8" id="formID">
+                <div class="search-box">
+                    <label>
+                        <h4>Select your ingredient(s):</h4>
+                        <input type="text" id="ingredient" placeholder="Type your ingredients to add it to the list(max 10)">
+                        <button id="addIngrBtn"> Add Ingredients </button>
+                        <button id="clearIngrBtn"> Clear Ingredients </button>
+                    </label>
+                </div>
+            </form>
+            <fieldset class="fieldset">
+                <legend>ingredients List</legend>
+                <ul id="ingredientList"></ul>
+            </fieldset>
         </div>
-        <div class="cell large-6">
-            <a href="#features" class="button">Search recipes</a>
+
+
+
+
+
+
+        <!-- Recipe Section -->
+        <div id="recipe-display" class="grid-x hidden">
+            <div class="cell large-6">
+                <a href="#features" class="button" id="recipesBtn">Search recipes</a>
+                <div class="card-flex-article-card">
+                    <div class="card-section ingredients">
+                        <h2 class="article-title text-center">Recipe</h2>
+                        <img class="search-img float-center" src="photos/meal.jpg" alt="meal">
+
+                        <p class="article-details text-center">Some Recipe ingredients & instructions</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div class="grid-container">
-        <label>Select your ingredient(s):
-            <input id = "ingredient" type="text" placeholder="Type your ingredients to add it to the list(max 10)">
-            <button id="addIngrBtn"> Add Ingredients </button>
-            <button id="clearIngrBtn"> Clear Ingredients </button>
-    </div>
-
-    <fieldset class="fieldset">
-        <legend>ingredients List</legend>
-        <ul id="ingredientList"></ul>
-    </fieldset>
-
-
-
-      <script src="scripts.js"></script>
+        <script src="scripts.js"></script>
 </body>
