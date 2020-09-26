@@ -1,0 +1,87 @@
+/* Color Palette: 
+    primary (orange): #D25129
+    secondary (light green): #D0DFCF
+    neutral (soft white): rgb(255, 255, 255)
+    neutral (black/brown): #29231F  */
+
+    /* Typography
+    main headers: Google Font: Lilita One (link for html header below)
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">  */
+
+
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+.top-bar {
+    text-align: center;
+    /* background-color: #D25129; */
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    
+}
+
+.top-bar h1 {
+    font-family: "Lilita One", cursive;
+    color: #D25129;
+    font-size: 4em;
+}
+
+.ingredients {
+    background-color: #D25129;
+    color: rgb(255, 255, 255);
+}
+
+.page-intro h2 {
+    padding: 20px;
+    margin: 10px 50px;
+}
+
+#search-options h2 {
+    /* padding-top: 20px; */
+    font-family: "Lilita One", cursive;
+}
+
+.search-img {
+    border-radius: 15%;
+    padding: 20px;
+    height: 425px;
+    width: 625px;
+}
+
+.flavors p {
+    font-size: 1em;
+}
+
+.button {
+    border-radius: 2em;
+    background-color: rgb(255, 255, 255); 
+    color: #D25129;
+    width: 500px;
+    /* color: #282516;
+    background-color: #ADD2AC; */
+}
+
+.button:hover {
+    background-color:#D0DFCF;
+}
+
+#search {
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px;
+
+}
+.search-box {
+    padding-top: 20px;
+}
+.fieldset {
+    color: #D25129;
+}
+
+.hidden {
+    display: none;
+}
