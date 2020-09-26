@@ -1,24 +1,30 @@
+$("document").ready(function () {
+    //store values of ingredients in Array
+    var ingredientsArray = [];
 
 
+    document.getElementById("addIngrBtn").onclick = function () {
 
-//add ingredients button
-document.getElementById("addIngrBtn").onclick = function() {
+        let ingredient = document.getElementById("ingredient").value;
+        let newItem = document.createElement("li")
+        newItem.appendChild(document.createTextNode(ingredient));
+        document.getElementById("ingredientList").appendChild(newItem);
 
-    let ingredient = document.getElementById("ingredient").value;
-    let newItem = document.createElement("li")
-    newItem.appendChild(document.createTextNode(ingredient));
-    document.getElementById("ingredientList").appendChild(newItem);
-
-    document.getElementById("ingredient").value = "";
-}
-
-//Clear Button
-document.getElementById("clearIngrBtn").onclick = function() {
-    let parent = document.getElementById("ingredientList");
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
+        document.getElementById("ingredient").value = "";
     }
-}
+
+    //Clear Button
+    document.getElementById("clearIngrBtn").onclick = function () {
+        let parent = document.getElementById("ingredientList");
+        while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+    }
+
+document.getElementById("formID").addEventListener("submit",function(e){
+    e.preventDefault();
+    return false;
+});
 
 //store values of ingredients in Array
 
@@ -32,7 +38,7 @@ for(var i=0;i < list.length; i++) {
 }})
 
 
-var listItems = document.getElementById('ingredientList').getElementsByTagName('li'),
+var listItems = document.getElementById('ingredientList').getElementsByTagName('li');
 
 //     ingredientsArray = map(listItems, getText);
 
@@ -50,3 +56,15 @@ var listItems = document.getElementById('ingredientList').getElementsByTagName('
 //     } while (node = node.nextSibling);
 //     return txt;
 // }
+
+    // Recipe search button query 
+    // Hidden class will hide or display divs
+
+    $("#recipe-query").on("click", function () {
+        console.log("Recipe search button has been clicked");
+
+        $("#recipe-display").removeClass("hidden");
+        $("#search-options").addClass("hidden");
+
+    });
+});
