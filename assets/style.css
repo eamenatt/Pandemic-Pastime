@@ -30,10 +30,11 @@ body {
     font-size: 4em;
 }
 
-.ingredients {
+/* removing this as I replaced this styling below with the li tag -Eric M*/
+/* .ingredients {
     background-color: #D25129;
     color: rgb(255, 255, 255);
-}
+} */
 
 .page-intro h2 {
     padding: 20px;
@@ -85,3 +86,31 @@ body {
 .hidden {
     display: none;
 }
+
+.searchBtnStyle {
+    border-radius: 20px;
+    background-color: #D25129;
+    color: rgb(255, 255, 255) ;
+    font-size: 25px;
+    padding: 5px;
+
+}
+
+.searchBtnStyle:hover {
+    background-color:#D0DFCF;
+}
+
+li {
+    list-style-position:inside;
+    float: left;
+    margin-left: 15px;
+    background-color: #D25129;
+    color: rgb(255, 255, 255) ;
+    list-style: none;
+    border-radius: 25px;
+    padding: 5px;
+    font-weight: bold;
+
+    
+}
+
