@@ -13,11 +13,11 @@
         integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
 
     <!-- Duplicate scripts? -->
-      <!-- Compressed JavaScript
+    <!-- Compressed JavaScript
       <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
       integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
- 
+
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 
@@ -42,7 +42,8 @@
                 <img class="search-img float-center" src="assets/pairings.jpg" alt="food pairings">
                 <div class="card-section ingredients">
                     <h2 class="article-title text-center">Wine Pairings</h2>
-                    <p class="article-details text-center">Enter a recipe ingredient to find a wine that pairs well with your meal!</p>
+                    <p class="article-details text-center">Enter a recipe ingredient to find a wine that pairs well with
+                        your meal!</p>
 
                     <div class="cell large-6 text-center">
                         <button class="button large" type="button">Wine Pairings Search</button>
@@ -67,51 +68,46 @@
                 </div>
             </div>
         </div>
-        
+    </div>
+    <div class="grid-x">
+    
+
         <div id="search" class="cell large-12">
-            <form class="cell large-8">
+            <form class="cell large-8" id="formID">
                 <div class="search-box">
                     <label>
                         <h4>Select your ingredient(s):</h4>
-                        <input type="text" placeholder="Type your ingredients to add it to the list(max 10)">
+                        <input type="text" id="ingredient" placeholder="Type your ingredients to add it to the list(max 10)">
+                        <button id="addIngrBtn"> Add Ingredients </button>
+                        <button id="clearIngrBtn"> Clear Ingredients </button>
                     </label>
                 </div>
             </form>
-            <fieldset class="fieldset cell large-10">
-                <legend>Ingredients List</legend>
-                <input id="checkbox12" type="checkbox"><label for="checkbox12">Rice</label>
-                <input id="checkbox12" type="checkbox"><label for="checkbox22">Onion</label>
-                <input id="checkbox12" type="checkbox"><label for="checkbox32">Soy Sauce</label>
+            <fieldset class="fieldset">
+                <legend>ingredients List</legend>
+                <ul id="ingredientList"></ul>
             </fieldset>
         </div>
-    </div>
 
-    <!-- Recipe Section -->
-    <div id="recipe-display" class="grid-x hidden">
-        <div class="cell large-6">
-            <div class="card-flex-article-card">
-                <div class="card-section ingredients">
-                    <h2 class="article-title text-center">Recipe</h2>
-                    <img class="search-img float-center" src="photos/meal.jpg" alt="meal">
 
-                    <p class="article-details text-center">Some Recipe ingredients & instructions</p>
+
+
+
+
+        <!-- Recipe Section -->
+        <div id="recipe-display" class="grid-x hidden">
+            <div class="cell large-6">
+                <a href="#features" class="button" id="recipesBtn">Search recipes</a>
+                <div class="card-flex-article-card">
+                    <div class="card-section ingredients">
+                        <h2 class="article-title text-center">Recipe</h2>
+                        <img class="search-img float-center" src="photos/meal.jpg" alt="meal">
+
+                        <p class="article-details text-center">Some Recipe ingredients & instructions</p>
+                    </div>
                 </div>
             </div>
         </div>
 
-    </div>
-
-    <div class="grid-container">
-        <label>Select your ingredient(s):
-            <input id = "ingredient" type="text" placeholder="Type your ingredients to add it to the list(max 10)">
-            <button id="addIngrBtn"> Add Ingredients </button>
-            <button id="clearIngrBtn"> Clear Ingredients </button>
-    </div>
-
-    <fieldset class="fieldset">
-        <legend>ingredients List</legend>
-        <ul id="ingredientList"></ul>
-    </fieldset>
-    <script src="scripts.js"></script>
-
+        <script src="scripts.js"></script>
 </body>
