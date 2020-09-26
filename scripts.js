@@ -21,41 +21,43 @@ $("document").ready(function () {
         }
     }
 
-document.getElementById("formID").addEventListener("submit",function(e){
-    e.preventDefault();
-    return false;
-});
+    document.getElementById("formID").addEventListener("submit", function (e) {
+        e.preventDefault();
+        return false;
+    });
 
-//store values of ingredients in Array
+    //store values of ingredients in Array
 
-$(".button").click(function(){
-var list = document.getElementById('ingredientList').childNodes;
-var IngredientsArray = [];
-for(var i=0;i < list.length; i++) {
-    var arrValue = list[i].innerHTML;
-    alert(arrValue);
-    theArray.push(arrValue);
-}})
+    $(".button").click(function () {
+        var list = document.getElementById('ingredientList').childNodes;
+        var ingredientsArray = [];
+        for (var i = 0; i < list.length; i++) {
+            var arrValue = list[i].innerHTML;
+
+            ingredientsArray.push(arrValue);
+        }
+        alert(ingredientsArray);
+    });
 
 
-var listItems = document.getElementById('ingredientList').getElementsByTagName('li');
+    var listItems = document.getElementById('ingredientList').getElementsByTagName('li');
 
-//     ingredientsArray = map(listItems, getText);
+    //     ingredientsArray = map(listItems, getText);
 
-// function map(arrayLike, fn) {
-//     var ret = [], i = -1, len = arrayLike.length;
-//     while (++i < len) ret[i] = fn(arrayLike[i]);
-//     return ret;
-// }
+    // function map(arrayLike, fn) {
+    //     var ret = [], i = -1, len = arrayLike.length;
+    //     while (++i < len) ret[i] = fn(arrayLike[i]);
+    //     return ret;
+    // }
 
-// function getText(node) {
-//     if (node.nodeType === 3) return node.data;
-//     var txt = '';
-//     if (node = node.firstChild) do {
-//         txt += getText(node);
-//     } while (node = node.nextSibling);
-//     return txt;
-// }
+    // function getText(node) {
+    //     if (node.nodeType === 3) return node.data;
+    //     var txt = '';
+    //     if (node = node.firstChild) do {
+    //         txt += getText(node);
+    //     } while (node = node.nextSibling);
+    //     return txt;
+    // }
 
     // Recipe search button query 
     // Hidden class will hide or display divs
