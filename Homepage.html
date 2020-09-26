@@ -12,7 +12,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
         integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
 
-
+    <!-- Duplicate scripts? -->
+      <!-- Compressed JavaScript
+      <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+ 
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 
@@ -95,22 +100,18 @@
         </div>
 
     </div>
-    <!-- Compressed JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
-        integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
 
-        $("document").ready(function () {
-            $("#recipe-query").on("click", function () {
-                console.log("Recipe search button has been clicked");
+    <div class="grid-container">
+        <label>Select your ingredient(s):
+            <input id = "ingredient" type="text" placeholder="Type your ingredients to add it to the list(max 10)">
+            <button id="addIngrBtn"> Add Ingredients </button>
+            <button id="clearIngrBtn"> Clear Ingredients </button>
+    </div>
 
-                $("#recipe-display").removeClass("hidden");
-                $("#search-options").addClass("hidden");
-
-
-            });
-        });
-    </script>
+    <fieldset class="fieldset">
+        <legend>ingredients List</legend>
+        <ul id="ingredientList"></ul>
+    </fieldset>
+    <script src="scripts.js"></script>
 
 </body>
