@@ -30,11 +30,11 @@ body {
     font-size: 4em;
 }
 
-/* removing this as I replaced this styling below with the li tag -Eric M*/
-/* .ingredients {
+
+.ingredients {
     background-color: #D25129;
     color: rgb(255, 255, 255);
-} */
+}
 
 .page-intro h2 {
     padding: 20px;
