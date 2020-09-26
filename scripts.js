@@ -32,7 +32,7 @@ for(var i=0;i < list.length; i++) {
 }})
 
 
-// var listItems = document.getElementById('ingredientList').getElementsByTagName('li'),
+var listItems = document.getElementById('ingredientList').getElementsByTagName('li'),
 
 //     ingredientsArray = map(listItems, getText);
 
