@@ -58,21 +58,20 @@
             <a href="#features" class="button">Search recipes</a>
         </div>
     </div>
-    <form>
-        <div class="grid-container">
-            <label>Select your ingredient(s):
-                <input type="text" placeholder="Type your ingredients to add it to the list(max 10)">
-            </label>
-        </div>
-    </form>
+
+    <div class="grid-container">
+        <label>Select your ingredient(s):
+            <input id = "ingredient" type="text" placeholder="Type your ingredients to add it to the list(max 10)">
+            <button id="addIngrBtn"> Add Ingredients </button>
+            <button id="clearIngrBtn"> Clear Ingredients </button>
+    </div>
+
     <fieldset class="fieldset">
         <legend>ingredients List</legend>
-        <input id="checkbox12" type="checkbox"><label for="checkbox12">Rice</label>
-        <input id="checkbox12" type="checkbox"><label for="checkbox22">Onion</label>
-        <input id="checkbox12" type="checkbox"><label for="checkbox32">Soy Sauce</label>
-      </fieldset>
+        <ul id="ingredientList"></ul>
+    </fieldset>
 
 
 
-
+      <script src="scripts.js"></script>
 </body>
