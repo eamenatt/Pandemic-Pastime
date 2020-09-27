@@ -131,3 +131,17 @@ li {
   border-top: 1px solid #cacaca;
   border-bottom: 1px solid #cacaca;
 }
+
+/* ___________________ FOOTER CSS ___________________ */
+/* Footer */
+.footer {
+  position: fixed;
+  padding: 0.8rem;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #D25129;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
