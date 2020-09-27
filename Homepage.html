@@ -36,53 +36,17 @@
     </div>
 
     <!-- Home Page / Search Options -->
-    <div id="search-options" class="grid-x">
-        <!-- Recipe Search -->
-        <div class="cell large-6">
-            <div class="card-flex-article-card">
-                <img class="search-img float-center" src="assets/ingredients.jpg" alt="ingredients">
-                <div class="card-section ingredients">
-                    <h2 class="article-title text-center">Recipes by ingredient:</h2>
-                    <p class="article-details text-center">Enter the ingredients you have laying around the house below
-                        and we'll show you the best recipes
-                        including those items!</p>
+    <div id="search-options" class="grid-x row large-12 align-spaced">
 
-                    <div class="cell large-6 text-center">
-                        <button id="recipe-query" class="button large" type="button">Recipe Search</button>
-                        <!-- <a href="about.html" class="button large">Flavor Pairings</a> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Wine Pairing Search -->
-        <div class="cell large-6">
-            <div class="card-flex-article-card">
-                <img class="search-img float-center" src="assets/pairings.jpg" alt="food pairings">
-                <div class="card-section ingredients">
-                    <h2 class="article-title text-center">Wine Pairings</h2>
-                    <p class="article-details text-center">Enter a recipe ingredient to find a wine that pairs well with
-                        your meal!</p>
-
-                    <div class="cell large-6 text-center">
-                        <button class="button large" type="button">Wine Pairings Search</button>
-                        <!-- <a href="about.html" class="button large">Flavor Pairings</a> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="grid-x">
-    
-
-        <div id="search" class="cell large-12">
+        <!-- Search Sidebar -->
+        <div id="search" class="side-nav large-2 columns">
             <form class="cell large-8" id="formID">
                 <div class="search-box">
                     <label>
                         <h4>Select your ingredient(s):</h4>
                         <input type="text" id="ingredient" placeholder="Add your ingredients here (max 10)">
-                        <button id="addIngrBtn" class="searchBtnStyle">Add Ingredients</button>
-                        <button id="clearIngrBtn" class="searchBtnStyle">Clear Ingredients</button>
+                        <button id="addIngrBtn" class="searchBtnStyle button">Add Ingredients</button>
+                        <button id="clearIngrBtn" class="searchBtnStyle button">Clear Ingredients</button>
                     </label>
                 </div>
             </form>
@@ -92,10 +56,37 @@
             </fieldset>
         </div>
 
+        <!-- Recipe Search -->
+        <div class="card-flex-article-card cell large-4 columns">
+            <div class="card-image">
+                <img class="search-img float-center" src="assets/ingredients.jpg" alt="ingredients">
+            </div>
+            <div class="card-section ingredients text-center">
+                <h2 class="article-title">Recipes by Ingredient</h2>
+                <!-- <p class="article-details">Enter the ingredients you have laying around the house below
+                    and we'll show you the best recipes
+                    including those items!</p> -->
+                <button id="recipe-query" class="button large search-btn" type="button">Recipe Search</button>
+            </div>
+        </div>
 
 
+        <!-- Wine Pairing Search -->
+        <div class="card-flex-article-card large-4 columns">
+            <div class="card-image">
+                <img class="search-img float-center" src="assets/pairings.jpg" alt="food pairings">
+                <div class="card-section ingredients text-center">
+                    <h2 class="article-title">Wine Pairings</h2>
+                    <!-- <p class="article-details">Enter a recipe ingredient to find a wine that pairs well with
+                        your meal!</p> -->
+                    <button id ="wine-query" class="button large search-btn" type="button">Wine Pairings Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
+    <!-- Recipe Info Section -->
+    <div class="grid-x">
 
         <!-- Recipe Section -->
         <div id="recipe-display" class="grid-x hidden">
@@ -132,21 +123,21 @@
                     <h2 class="NutritionTitle">nutritional Data</h2>
                 </div>
             </div>
-            
+
             <div class="grid-x">
-               
+
                 <div class="cells medium-9">
                     <h3 class="Instruction">Introduction</h3>
                     <ul class="steps">
                         <li>Step 1</li>
                     </ul>
-        
+
                     <button id="NextBtn"> Next Recipe </button>
                     <button id="printBtn"> Print Recipe </button>
                     <button id="ShareBtn"> Share Recipes </button>
-        
+
                 </div>
-        
+
             </div>
         </div>
 
