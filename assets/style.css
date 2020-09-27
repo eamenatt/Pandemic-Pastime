@@ -110,7 +110,20 @@ li {
     border-radius: 25px;
     padding: 5px;
     font-weight: bold;
+    }
 
-    
+/* ___________________ PAIRINGS PAGE CSS ___________________ */
+
+.work-feature-block-image {
+  display: inline-block;
+  margin: 20px;
+  padding-right: 50px;
+}
+
+.work-feature-block-header {  
+  display: inline-block;
+  margin: 20px;
+  border-top: 1px solid #cacaca;
+  border-bottom: 1px solid #cacaca;
 }
 
