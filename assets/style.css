@@ -49,19 +49,23 @@ body {
 .search-img {
     border-radius: 15%;
     padding: 20px;
-    height: 425px;
-    width: 625px;
+    height: 325px;
+    width: 525px;
 }
 
 .flavors p {
     font-size: 1em;
 }
 
-.button {
+.card-section {
+    height: 200px;
+}
+
+.search-btn {
     border-radius: 2em;
     background-color: rgb(255, 255, 255); 
     color: #D25129;
-    width: 500px;
+    width: 250px;
     /* color: #282516;
     background-color: #ADD2AC; */
 }
@@ -91,8 +95,9 @@ body {
     border-radius: 20px;
     background-color: #D25129;
     color: rgb(255, 255, 255) ;
-    font-size: 25px;
+    font-size: 20px;
     padding: 5px;
+    width: 175px;
 
 }
 
