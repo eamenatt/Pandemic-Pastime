@@ -30,6 +30,12 @@ body {
     font-size: 4em;
 }
 
+h2 {
+    font-family: "Lilita One", cursive;
+    color: #29231F;
+}
+
+
 .ingredients {
     background-color: #D25129;
     color: rgb(255, 255, 255);
@@ -48,19 +54,23 @@ body {
 .search-img {
     border-radius: 15%;
     padding: 20px;
-    height: 425px;
-    width: 625px;
+    height: 325px;
+    width: 525px;
 }
 
 .flavors p {
     font-size: 1em;
 }
 
-.button {
+.card-section {
+    height: 200px;
+}
+
+.search-btn {
     border-radius: 2em;
     background-color: rgb(255, 255, 255); 
     color: #D25129;
-    width: 500px;
+    width: 250px;
     /* color: #282516;
     background-color: #ADD2AC; */
 }
@@ -84,4 +94,62 @@ body {
 
 .hidden {
     display: none;
+}
+
+.searchBtnStyle {
+    border-radius: 20px;
+    background-color: #D25129;
+    color: rgb(255, 255, 255) ;
+    font-size: 20px;
+    padding: 5px;
+    width: 175px;
+
+}
+
+.searchBtnStyle:hover {
+    background-color:#D0DFCF;
+}
+
+#ingredientList li {
+    list-style-position:inside;
+    float: left;
+    margin-left: 15px;
+    background-color: #D25129;
+    color: rgb(255, 255, 255) ;
+    list-style: none;
+    border-radius: 25px;
+    padding: 5px;
+    font-weight: bold;
+    }
+
+    .recipe-img {
+       align-items: center;
+       margin-top: 25px;
+    }
+/* ___________________ PAIRINGS PAGE CSS ___________________ */
+
+.work-feature-block-image {
+  display: inline-block;
+  margin: 20px;
+  padding-right: 50px;
+}
+
+.work-feature-block-header {  
+  display: inline-block;
+  margin: 20px;
+  border-top: 1px solid #cacaca;
+  border-bottom: 1px solid #cacaca;
+}
+
+/* ___________________ FOOTER CSS ___________________ */
+.footer {
+  position: fixed;
+  padding: 0.8rem;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #D25129;
+  color: white;
+  text-align: center;
+  z-index: 1;
 }
