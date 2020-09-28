@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edamam Nutrition API Test</title>
+</head>
+<body>
+    <input></input>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+    //A comma-separated list of ingredients that the recipes should contain
+    var ingredient = "beef, milk";
+
+   
+    //Find nutrition info based on ingredient input
+    var apiKey = "&app_id=5af669d7&app_key=0e4731f25a5a58164ba637134657aa87"
+    var queryURL = "https://api.edamam.com/api/food-database/v2/parser?ingr=" + ingredient + apiKey;
+   
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function (response) {
+      console.log(response);
+    });
+  </script>
+</body>
+</html>
