@@ -30,6 +30,11 @@ body {
     font-size: 4em;
 }
 
+h2 {
+    font-family: "Lilita One", cursive;
+    color: #29231F;
+}
+
 
 .ingredients {
     background-color: #D25129;
@@ -105,7 +110,7 @@ body {
     background-color:#D0DFCF;
 }
 
-li {
+#ingredientList li {
     list-style-position:inside;
     float: left;
     margin-left: 15px;
@@ -117,6 +122,10 @@ li {
     font-weight: bold;
     }
 
+    .recipe-img {
+       align-items: center;
+       margin-top: 25px;
+    }
 /* ___________________ PAIRINGS PAGE CSS ___________________ */
 
 .work-feature-block-image {

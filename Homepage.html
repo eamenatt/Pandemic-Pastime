@@ -79,67 +79,85 @@
                     <h2 class="article-title">Wine Pairings</h2>
                     <!-- <p class="article-details">Enter a recipe ingredient to find a wine that pairs well with
                         your meal!</p> -->
-                    <button id ="wine-query" class="button large search-btn" type="button">Wine Pairings Search</button>
+                    <button id="wine-query" class="button large search-btn" type="button">Wine Pairings Search</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Recipe Info Section -->
-    <div class="grid-x">
+    <div id="recipe-display" class="grid-container hidden">
+        <!-- Recipe Headers -->
+        <div class="text-center">
+            <h2>Recipes</h2>
+        </div>
 
-        <!-- Recipe Section -->
-        <div id="recipe-display" class="grid-x hidden">
-            <div class="page-intro">
-                <h2>Recipes</h2>
-            </div>
-            <!---Please make Recipe title div align to right and text center-->
-            <div class="grid-x">
-                <div class="cells medium-7">
-                    <h2 class="title-of-dish">Title of dish</h2>
-                </div>
-            </div>
-            <div class="grid-x">
-                <div class="cells medium-3">
-                    <img class="Recipe-image" src="https://placehold.it/400x400" />
-                </div>
-                <div class="cells medium-3">
-                    <h3 class="prepTime">Preparation Time:</h3>
-                    <p> xxminutes</p>
-                    <h3 class="Ingredient">Ingredient:</h3>
-                    <ul class="ingredientList">
-                        <li>Item 1</li>
-                    </ul>
-                </div>
-                <div class="cells medium-6">
-                    <h3 class="Instruction">Introduction</h3>
-                    <ul class="steps">
-                        <li>Step 1</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="grid-x">
-                <div class="cells medium-7">
-                    <h2 class="NutritionTitle">nutritional Data</h2>
-                </div>
-            </div>
-
-            <div class="grid-x">
-
-                <div class="cells medium-9">
-                    <h3 class="Instruction">Introduction</h3>
-                    <ul class="steps">
-                        <li>Step 1</li>
-                    </ul>
-
-                    <button id="NextBtn"> Next Recipe </button>
-                    <button id="printBtn"> Print Recipe </button>
-                    <button id="ShareBtn"> Share Recipes </button>
-
-                </div>
-
+        <div class="grid-x row large-12">
+            <div class="large-4"></div>
+            <div class="article-title column large-8 text-center">
+                <h3>Title of Recipe</h3>
             </div>
         </div>
 
-        <script src="scripts.js"></script>
+        <!-- Recipe Info Card -->
+        <div class="grid-x row large-12 align-spaced">
+            <!-- Recipe Image -->
+            <div class="card-image large-4 columns text-center">
+                <img class="recipe-img" src="https://placehold.it/400x400" alt="placeholder image">
+            </div>
+
+            <!-- Recipe Prep & Ingredient List -->
+            <div class="card-flex-article-card cell large-4 columns">
+                <div class="card-section prep-time">
+                    <h3 class="article-title">Preparation Time</h3>
+                    <p class="article-details">XX Minutes</p>
+                </div>
+
+                <div class="card-section">
+                    <div class="article-title">
+                        <h3>Ingredients</h3>
+                    </div>
+                    <div class="ingredient-list card-section">
+                        <ul>
+                            <li>Ingredient 1</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe Instructions -->
+            <div class="card-flex-article-card large-4 columns">
+                <div class="card-section instructions">
+                    <h3 class="article-title">Instructions</h3>
+                    <ul class="steps article-details">
+                        <li>Step 1</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nutritional Data & Recipe Control Buttons -->
+        <div class="grid-x row large-12 align-spaced">
+            <div class="card-flex-article-card large-5 columns">
+                <div class="card-section nurtional-data">
+                    <h3 class="article-title">Nutritional Data</h3>
+                    <ul class="info article-details">
+                        <li>Data Fact 1</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-flex-article-card large-7 columns">
+                <div class="card-section recipe-buttons">
+                    <div class="button-group align-spaced">
+                        <button id="NextBtn" class="button large searchBtnStyle"> Next Recipe </button>
+                        <button id="printBtn" class="button large searchBtnStyle"> Print Recipe </button>
+                        <button id="ShareBtn" class="button large searchBtnStyle"> Share Recipes </button>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
