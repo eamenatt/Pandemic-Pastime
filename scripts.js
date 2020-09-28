@@ -50,3 +50,13 @@ $("document").ready(function () {
 
     });
 });
+
+$("#wine-query").on("click", function () {
+    console.log("wine pairing button has been clicked");
+
+    $("#wine-display").removeClass("hidden");
+    $("#search-options").addClass("hidden");
+
+});
+
+
