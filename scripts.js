@@ -3,7 +3,7 @@ $("document").ready(function () {
     var ingredientsArray = [];
     var recipeArray = [];
 
-    var apiKey = "9c7455831c634e4c8e907857c9b77b2c";
+    var apiKey = "78d70e51419243b7b009c0a352741717";
 
     //PARAMETERS
     //The maximum number of recipes to return (between 1 and 100). Defaults to 10
@@ -13,6 +13,8 @@ $("document").ready(function () {
     //Includes instructions in JSON object
     var includeInstructions = true;
 
+
+    //Add ingredients button & functionality
     document.getElementById("addIngrBtn").onclick = function () {
 
         let ingredient = document.getElementById("ingredient").value;
@@ -50,7 +52,7 @@ $("document").ready(function () {
         return false;
     });
 
-
+    //Recipe search button & API call
     var ingredients = "";
     $("#recipe-query").on("click", function () {
         console.log("Recipe search button has been clicked");
@@ -108,12 +110,51 @@ $("document").ready(function () {
         $("#search-options").addClass("hidden");
 
     });
+//Wine pairing search button & API call
+    $("#wine-query").on("click", function () {
+        console.log("Wine pairing button has been clicked");
+
+        var list = document.getElementById('ingredientList').childNodes;
+        for (var i = 0; i < list.length; i++) {
+            var arrValue = list[i].innerHTML;
+            ingredientsArray.push(arrValue);
+            ingredients = arrValue
+        }
+
+
+        var queryURL = "https://api.spoonacular.com/food/wine/pairing?food=" + ingredients + "&apiKey=" + apiKey;
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            // console.log(response[index].imageUrl);
+            // console.log(response[index].title);
+            // console.log(response[index].id);
+           
+            WinePairArray = response;
+
+            $("#wineName").text(response.pairedWines[0]);
+            $("#wineDescrip").text(response.pairingText);
+
+             
+               
+        });
+           
+        $("#wine-display").removeClass("hidden");
+        $("#search-options").addClass("hidden");
+    });
 
 
     //Displays API info to page
     function renderRecipe() {
         $("#apiTitle").text(recipeArray[index].title);
         $(".recipe-img").attr("src", recipeArray[index].image);
+    }
+    
+    function renderWinePairing() {
+        $("#wineName").text(WinePairArray[index].pairedWines[0]);
     }
 
 
@@ -123,9 +164,9 @@ $("document").ready(function () {
     document.getElementById("NextBtn").onclick = function () {
         index++;
         renderRecipe();
+    
 
     }
-
 
 
 
