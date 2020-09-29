@@ -20,16 +20,16 @@
 
 <body>
     <!-- Header -->
-<div class="top-bar text-center">
-    <div class="top-bar-left">
-        <h1>What's Cookin'?</h1>
-    </div>
-    <div class="top-bar-right">
-        <div class="button-group align-right hidden" id="homeButton">
-            <button id="homeButton" type="button" class="success button">Home</button>
+    <div class="top-bar text-center">
+        <div class="top-bar-left">
+            <h1>What's Cookin'?</h1>
+        </div>
+        <div class="top-bar-right">
+            <div class="button-group align-right hidden" id="homeButton">
+                <button id="homeButton" type="button" class="success button">Home</button>
+            </div>
         </div>
     </div>
-</div>
     <div class="page-intro text-center hide">
         <h3><b>Stuck at home?</b>&nbsp;Let's find some new flavor combos and recipies with the ingredients you already
             on hand!
@@ -44,9 +44,9 @@
             <div id="alert-box" data-closable class="alert-box callout warning hidden">
                 Please enter an ingredient.
                 <button id="close-btn" class="close-button" aria-label="Dismiss alert" type="button" data-close>
-                  <span aria-hidden="true">&CircleTimes;</span>
+                    <span aria-hidden="true">&CircleTimes;</span>
                 </button>
-              </div>
+            </div>
             <form name="theform" class="cell large-8" id="formID">
                 <div class="search-box">
                     <label>
@@ -71,7 +71,8 @@
             <div class="card-section ingredients text-center">
                 <h2 class="article-title">Recipes by Ingredient</h2>
                 <p class="article-details">Raid the fridge and add an ingredient to search for recipes.</p>
-                <button id="recipe-query" class="button large search-btn disabled" type="button" disabled="disabled">Recipe Search</button>
+                <button id="recipe-query" class="button large search-btn disabled" type="button"
+                    disabled="disabled">Recipe Search</button>
             </div>
         </div>
 
@@ -84,7 +85,8 @@
                     <h2 class="article-title">Wine Pairings</h2>
                     <p class="article-details">Enter an ingredient to find a wine pairing for your
                         your meal.</p>
-                    <button id="wine-query" class="button large search-btn disabled" type="button" disabled="disabled">Wine Pairings Search</button>
+                    <button id="wine-query" class="button large search-btn disabled" type="button"
+                        disabled="disabled">Wine Pairings Search</button>
                 </div>
             </div>
         </div>
@@ -157,7 +159,8 @@
                 <div class="card-section recipe-buttons">
                     <div class="button-group align-spaced">
                         <button id="NextBtn" class="button large searchBtnStyle"> Next Recipe </button>
-                        <button id="printBtn" class="button large searchBtnStyle" onclick="window.print()"> Print Recipe </button>
+                        <button id="printBtn" class="button large searchBtnStyle" onclick="window.print()"> Print Recipe
+                        </button>
                         <button id="ShareBtn" class="button large searchBtnStyle"> Share Recipes </button>
                     </div>
                 </div>
@@ -168,27 +171,28 @@
     <!-- Pairings Section -->
     <div id="wine-display" class="grid-x hidden">
         <div class="page-intro text-center">
-            <h3><b>Based on your ingredients, </b>&nbsp;your top wine pairing is...
+            <h3>Based on your ingredients, your top wine pairing is...
             </h3>
+
+
+            <div class="work-feature-block row">
+                <div class="columns medium-6">
+                    <img class="work-feature-block-image" id="winePairImg" src="assets/photos/winepairing.jpg" />
+                </div>
+            </div>
         </div>
+        <div class="columns medium-6">
 
-        <div class="work-feature-block row">
-            <div class="columns medium-6">
-                <img class="work-feature-block-image" src="assets/photos/winepairing.jpg" />
-            </div>
-            <div class="columns medium-6">
-
-                <h2 class="work-feature-block-header">Name of Wine</h2>
-                <p id="wineName"></p>
+            <h2 class="work-feature-block-header">Name of Wine</h2>
+            <p id="wineName"></p>
 
 
-                <h2 class="work-feature-block-header">Description</h2>
-                <p id="wineDescrip"></p>
-                <ul>
-                    <a class="button large warning" id="nextWineBtn">See another pairing!</a>
-                </ul>
+            <h2 class="work-feature-block-header">Description</h2>
+            <p id="wineDescrip"></p>
+            <ul>
+                <a class="button large warning" id="backBtn">Back to ingredients page</a>
+            </ul>
 
-            </div>
         </div>
     </div>
 

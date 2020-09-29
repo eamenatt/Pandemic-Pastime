@@ -33,7 +33,7 @@ $("document").ready(function () {
             document.getElementById("recipe-query").disabled = false;
             document.getElementById("wine-query").classList.remove("disabled");
             document.getElementById("recipe-query").classList.remove("disabled");
-         
+
 
         }
     }
@@ -110,7 +110,9 @@ $("document").ready(function () {
         $("#search-options").addClass("hidden");
 
     });
-//Wine pairing search button & API call
+
+
+    //Wine pairing search button & API call
     $("#wine-query").on("click", function () {
         console.log("Wine pairing button has been clicked");
 
@@ -129,30 +131,41 @@ $("document").ready(function () {
             method: "GET"
         }).then(function (response) {
             console.log(response);
-            // console.log(response[index].imageUrl);
-            // console.log(response[index].title);
-            // console.log(response[index].id);
-           
+
             WinePairArray = response;
 
-            $("#wineName").text(response.pairedWines[0]);
-            $("#wineDescrip").text(response.pairingText);
+            if (response.pairedWines[0] == null) {
+                $("#wineName").text("No matches found");
+                $("#wineDescrip").text("Sorry, no wine pairings found for that ingredient! Go back to the home page and try a different ingredient!");
+            } else {
+                var capitalizedWine = response.pairedWines[0].charAt(0).toUpperCase() + response.pairedWines[0].slice(1);
+                $("#wineName").text(capitalizedWine);
+                $("#wineDescrip").text(response.pairingText);
+                $("#winePairImg").attr("src", response.productMatches[0].imageUrl);
+            }
 
-             
-               
+
+
         });
-           
+
         $("#wine-display").removeClass("hidden");
         $("#search-options").addClass("hidden");
     });
+//Clicking on t
+        $("#backBtn").on("click", function () {
+            
+            $("#wine-display").addClass("hidden");
+            $("#search-options").removeClass("hidden");
+            $("#homeButton").addClass("hidden");
 
+        })
 
     //Displays API info to page
     function renderRecipe() {
         $("#apiTitle").text(recipeArray[index].title);
         $(".recipe-img").attr("src", recipeArray[index].image);
     }
-    
+
     function renderWinePairing() {
         $("#wineName").text(WinePairArray[index].pairedWines[0]);
     }
@@ -164,7 +177,7 @@ $("document").ready(function () {
     document.getElementById("NextBtn").onclick = function () {
         index++;
         renderRecipe();
-    
+
 
     }
 
