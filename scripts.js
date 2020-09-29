@@ -25,6 +25,14 @@ $("document").ready(function () {
             document.getElementById("ingredientList").appendChild(newItem);
 
             document.getElementById("ingredient").value = "";
+
+            // Enable search button click after form input is valid
+            document.getElementById("wine-query").disabled = false;
+            document.getElementById("recipe-query").disabled = false;
+            document.getElementById("wine-query").classList.remove("disabled");
+            document.getElementById("recipe-query").classList.remove("disabled");
+         
+
         }
     }
 
@@ -119,56 +127,58 @@ $("document").ready(function () {
     }
 
 
+
+
+    function renderRecipe() {
+        $("#apiTitle").text(recipeArray[index].title);
+
+
+    }
+    //A comma-separated list of ingredients that the recipes should contain
+    //var ingredients = "";
+    //for (var i = 0; i < ingredientsArray.length; i++) {
+    //    ingredients += ingredientsArray[i];
+    //    return ingredients;
+    //};
+
+    //The maximum number of recipes to return (between 1 and 100). Defaults to 10
+    var number = 5;
+
+    //Whether to ignore typical pantry items, such as water, salt, flour, etc
+    var ignorePantry = true;
+
+    //Includes instructions in JSON object
+    var includeInstructions = true;
+
+    //DISPLAY VARIABLES
+    //Displays recipe instructiosn on page
+    //var displayInstructions = "";
+    //var displayTitle = "";
+    //var displayImage = "";
+
+    //Add an onclick "Next Recipe" to +1 the index
+    var index = 0;
+    document.getElementById("NextBtn").onclick = function () {
+        index++;
+        renderRecipe();
+    }
+
+    $("#homeButton").on("click", function () {
+        console.log("homeButton button has been clicked");
+
+        $("#homeButton").addClass("hidden");
+        $("#recipe-display").addClass("hidden");
+        $("#wine-display").addClass("hidden");
+        $("#search-options").removeClass("hidden");
+
+    });
+
+    // Onclick event to close alert box pop up on homepage
+    $("#close-btn").on("click", function () {
+
+        $("#alert-box").addClass("hidden");
+
+    });
+
+
 });
-
-function renderRecipe() {
-    $("#apiTitle").text(recipeArray[index].title);
-
-
-}
-//A comma-separated list of ingredients that the recipes should contain
-//var ingredients = "";
-//for (var i = 0; i < ingredientsArray.length; i++) {
-//    ingredients += ingredientsArray[i];
-//    return ingredients;
-//};
-
-//The maximum number of recipes to return (between 1 and 100). Defaults to 10
-var number = 5;
-
-//Whether to ignore typical pantry items, such as water, salt, flour, etc
-var ignorePantry = true;
-
-//Includes instructions in JSON object
-var includeInstructions = true;
-
-//DISPLAY VARIABLES
-//Displays recipe instructiosn on page
-//var displayInstructions = "";
-//var displayTitle = "";
-//var displayImage = "";
-
-//Add an onclick "Next Recipe" to +1 the index
-var index = 0;
-document.getElementById("NextBtn").onclick = function () {
-    index++;
-    renderRecipe();
-}
-
-$("#homeButton").on("click", function () {
-    console.log("homeButton button has been clicked");
-
-    $("#homeButton").addClass("hidden");
-    $("#recipe-display").addClass("hidden");
-    $("#wine-display").addClass("hidden");
-    $("#search-options").removeClass("hidden");
-
-});
-
-$("#close-btn").on("click", function(){
-    
-    $("#alert-box").addClass("hidden");
-
-});
-
-

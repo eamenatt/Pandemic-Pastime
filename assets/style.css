@@ -12,6 +12,7 @@
 
 body {
     background-color: rgb(255, 255, 255);
+    color: #29231F;
 }
 
 .top-bar {
@@ -76,7 +77,16 @@ h2 {
 }
 
 .button:hover {
-    background-color:#D0DFCF;
+    background-color: #D0DFCF;
+}
+
+.button:disabled,
+.disabled {
+    background-color: rgb(255, 255, 255);
+    color: #282516;
+    opacity: 1;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 #search {
