@@ -19,14 +19,24 @@ $("document").ready(function () {
 
         let ingredient = document.getElementById("ingredient").value;
         if (ingredient.length === 0 || ingredient.length > 25) {
-            alert ("you need to enter an ingredient");
+            // alert ("you need to enter an ingredient");
+            $("#alert-box").removeClass("hidden");
         } else {
-        let newItem = document.createElement("li")
-        newItem.appendChild(document.createTextNode(ingredient));
-        document.getElementById("ingredientList").appendChild(newItem);
+            let newItem = document.createElement("li")
+            newItem.appendChild(document.createTextNode(ingredient));
+            document.getElementById("ingredientList").appendChild(newItem);
 
-        document.getElementById("ingredient").value = "";
-    }}
+            document.getElementById("ingredient").value = "";
+
+            // Enable search button click after form input is valid
+            document.getElementById("wine-query").disabled = false;
+            document.getElementById("recipe-query").disabled = false;
+            document.getElementById("wine-query").classList.remove("disabled");
+            document.getElementById("recipe-query").classList.remove("disabled");
+         
+
+        }
+    }
 
     //Clear Button
     document.getElementById("clearIngrBtn").onclick = function () {
@@ -159,9 +169,12 @@ $("document").ready(function () {
     }
 
 
-});
 
-    
+    function renderRecipe() {
+        $("#apiTitle").text(recipeArray[index].title);
+
+
+    }
     //A comma-separated list of ingredients that the recipes should contain
     //var ingredients = "";
     //for (var i = 0; i < ingredientsArray.length; i++) {
@@ -189,16 +202,24 @@ $("document").ready(function () {
     document.getElementById("NextBtn").onclick = function () {
         index++;
         renderRecipe();
+    }
 
-   $("#homeButton").on("click", function () {
-    console.log("homeButton button has been clicked");
+    $("#homeButton").on("click", function () {
+        console.log("homeButton button has been clicked");
 
-    $("#homeButton").addClass("hidden");
-    $("#recipe-display").addClass("hidden");
-    $("#wine-display").addClass("hidden");
-    $("#search-options").removeClass("hidden");
+        $("#homeButton").addClass("hidden");
+        $("#recipe-display").addClass("hidden");
+        $("#wine-display").addClass("hidden");
+        $("#search-options").removeClass("hidden");
+
+    });
+
+    // Onclick event to close alert box pop up on homepage
+    $("#close-btn").on("click", function () {
+
+        $("#alert-box").addClass("hidden");
+
+    });
+
 
 });
-
-
-    }

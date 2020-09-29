@@ -12,6 +12,7 @@
 
 body {
     background-color: rgb(255, 255, 255);
+    color: #29231F;
 }
 
 .top-bar {
@@ -76,7 +77,16 @@ h2 {
 }
 
 .button:hover {
-    background-color:#D0DFCF;
+    background-color: #D0DFCF;
+}
+
+.button:disabled,
+.disabled {
+    background-color: rgb(255, 255, 255);
+    color: #282516;
+    opacity: 1;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 #search {
@@ -153,3 +163,43 @@ h2 {
   text-align: center;
   z-index: 1;
 }
+
+/* Alert Box CSS */
+
+
+.alert-box {
+    padding-right: 3.25rem;
+    width: 100%;
+  }
+  
+  .alert-box.callout {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+  }
+  
+  .alert-box.warning {
+    border: 3px solid #D25129;
+    border-radius: 5px;
+    background-color: #29231F;
+  }
+  
+  .alert-box i {
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: .3em .325em;
+    margin-right: 0.5rem;
+  }
+  
+  .alert-box .close-button {
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    right: 1rem;
+    font-weight: bold;
+  }
+  
+  
