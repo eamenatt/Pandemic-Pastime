@@ -170,7 +170,7 @@ $("#wine-query").on("click", function () {
 $("#homeButton").on("click", function () {
     console.log("homeButton button has been clicked");
 
-    $("#top-bar").addClass("hidden");
+    $("#homeButton").addClass("hidden");
     $("#recipe-display").addClass("hidden");
     $("#wine-display").addClass("hidden");
     $("#search-options").removeClass("hidden");
