@@ -28,13 +28,13 @@ $("document").ready(function () {
     });
 
     //store values of ingredients in Array
-    
+
     //$(".button").click(function () {
-        //var list = document.getElementById('ingredientList').childNodes;
-        //for (var i = 0; i < list.length; i++) {
-            //var arrValue = list[i].innerHTML;
-            //ingredientsArray.push(arrValue);
-        //}
+    //var list = document.getElementById('ingredientList').childNodes;
+    //for (var i = 0; i < list.length; i++) {
+    //var arrValue = list[i].innerHTML;
+    //ingredientsArray.push(arrValue);
+    //}
     //});
 
 
@@ -52,7 +52,7 @@ $("document").ready(function () {
             ingredients += "," + arrValue;
         }
 
-        
+
         var queryURL = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=" + apiKey + "&ingredients=" + ingredients + "&ignorePantry=" + ignorePantry + "&instructionsRequired=" + includeInstructions + "&number=" + number;
 
         $.ajax({
@@ -86,10 +86,13 @@ $("document").ready(function () {
 
         console.log(ingredients);
         console.log(ingredientsArray);
+        $("#homeButton").removeClass("hidden");
         $("#recipe-display").removeClass("hidden");
         $("#search-options").addClass("hidden");
 
     });
+
+
 
     //A comma-separated list of ingredients that the recipes should contain
     //var ingredients = "";
@@ -152,5 +155,24 @@ $("document").ready(function () {
     //         //code to append to webpage
     //     });
     // });
+
+});
+
+$("#wine-query").on("click", function () {
+    console.log("wine pairing button has been clicked");
+
+    $("#homeButton").removeClass("hidden");
+    $("#wine-display").removeClass("hidden");
+    $("#search-options").addClass("hidden");
+
+});
+
+$("#homeButton").on("click", function () {
+    console.log("homeButton button has been clicked");
+
+    $("#top-bar").addClass("hidden");
+    $("#recipe-display").addClass("hidden");
+    $("#wine-display").addClass("hidden");
+    $("#search-options").removeClass("hidden");
 
 });
