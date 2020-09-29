@@ -12,12 +12,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
         integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
 
-    <!-- Duplicate scripts? -->
-    <!-- Compressed JavaScript
-      <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
-      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 
@@ -26,9 +20,16 @@
 
 <body>
     <!-- Header -->
-    <div class="top-bar text-center">
+<div class="top-bar text-center">
+    <div class="top-bar-left">
         <h1>What's Cookin'?</h1>
     </div>
+    <div class="top-bar-right">
+        <div class="button-group align-right hidden" id="homeButton">
+            <button id="homeButton" type="button" class="success button">Home</button>
+        </div>
+    </div>
+</div>
     <div class="page-intro text-center hide">
         <h3><b>Stuck at home?</b>&nbsp;Let's find some new flavor combos and recipies with the ingredients you already
             on hand!
@@ -91,7 +92,7 @@
         <div class="text-center">
             <h2>Recipes</h2>
         </div>
-   
+
         <div class="grid-x row large-12">
             <div class="large-4"></div>
             <div class="article-title column large-8 text-center">
@@ -104,7 +105,7 @@
             <!-- Recipe Image -->
             <div class="card-image large-4 columns text-center">
                 <img class="recipe-img" src="assets/photos/meal.jpg" alt="placeholder image">
-            </div> 
+            </div>
 
             <!-- Recipe Prep & Ingredient List -->
             <div class="card-flex-article-card cell large-4 columns">
@@ -154,51 +155,51 @@
                         <button id="NextBtn" class="button large searchBtnStyle"> Next Recipe </button>
                         <button id="printBtn" class="button large searchBtnStyle"> Print Recipe </button>
                         <button id="ShareBtn" class="button large searchBtnStyle"> Share Recipes </button>
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-         <!-- Pairings Section -->
-         <div id="wine-display" class="grid-x hidden">
-            <div class="page-intro">
-                <h2>Pairings</h2>
-            </div>
-            <div class="page-intro text-center">
-                <h3><b>Based on your ingredients, </b>&nbsp;your top flavor pairing is...
-                </h3>
-            </div>
-        
-            <div class="work-feature-block row">
-                <div class="columns medium-6">
-                    <img class="work-feature-block-image" src="assets/photos/winepairing.jpg" />
-                </div>
-                <div class="columns medium-6">
-        
-                    <h2 class="work-feature-block-header">Name of Food</h2>
-                    <p>Food description goes here</p>
-        
-        
-                    <h2 class="work-feature-block-header">Want to see another pairing?</h2>
-                    <ul>
-                        <a class="button large warning href=" #">Click Here!</a>
-                    </ul>
-        
-                </div>
-            </div>
+    <!-- Pairings Section -->
+    <div id="wine-display" class="grid-x hidden">
+        <div class="page-intro">
+            <h2>Pairings</h2>
+        </div>
+        <div class="page-intro text-center">
+            <h3><b>Based on your ingredients, </b>&nbsp;your top flavor pairing is...
+            </h3>
+        </div>
 
-        <script src="scripts.js"></script>
-
-        <!-- ______________________________ FOOTER _________________________ -->
-        <footer class="footer">
-            <div class="container" style="text-align: center">
-                <h5>Copyright &copy;
-                    <script>
-                        document.write(new Date().getFullYear());
-                    </script>
-                    | GWU Project Team - Awesome | a Pandemic Pastimes Original</h5>
+        <div class="work-feature-block row">
+            <div class="columns medium-6">
+                <img class="work-feature-block-image" src="assets/photos/winepairing.jpg" />
             </div>
-        </footer>
+            <div class="columns medium-6">
 
+                <h2 class="work-feature-block-header">Name of Food</h2>
+                <p>Food description goes here</p>
+
+
+                <h2 class="work-feature-block-header">Want to see another pairing?</h2>
+                <ul>
+                    <a class="button large warning href=" #">Click Here!</a>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ______________________________ FOOTER _________________________ -->
+    <footer class="footer">
+        <div class="container" style="text-align: center">
+            <h5>Copyright &copy;
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+                | GWU Project Team - Awesome | a Pandemic Pastimes Original</h5>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
 </body>

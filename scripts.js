@@ -30,19 +30,6 @@ $("document").ready(function () {
         return false;
     });
 
-    //store values of ingredients in Array
-    
-    //$(".button").click(function () {
-        //var list = document.getElementById('ingredientList').childNodes;
-        //for (var i = 0; i < list.length; i++) {
-            //var arrValue = list[i].innerHTML;
-            //ingredientsArray.push(arrValue);
-        //}
-    //});
-
-
-    //var listItems = document.getElementById('ingredientList').getElementsByTagName('li');
-
 
     var ingredients = "";
     $("#recipe-query").on("click", function () {
@@ -96,18 +83,6 @@ $("document").ready(function () {
         $("#search-options").addClass("hidden");
 
     });
-
-    function renderRecipe(){
-        $("#apiTitle").text(recipeArray[index].title);
-
-    }
-    //A comma-separated list of ingredients that the recipes should contain
-    //var ingredients = "";
-    //for (var i = 0; i < ingredientsArray.length; i++) {
-    //    ingredients += ingredientsArray[i];
-    //    return ingredients;
-    //};
-
     //The maximum number of recipes to return (between 1 and 100). Defaults to 10
     var number = 5;
 
@@ -127,7 +102,6 @@ $("document").ready(function () {
     var index = 0;
     document.getElementById("NextBtn").onclick = function () {
         index++;
-        renderRecipe();
 
     }
 
@@ -165,3 +139,49 @@ $("document").ready(function () {
     // });
 
 });
+
+    function renderRecipe(){
+        $("#apiTitle").text(recipeArray[index].title);
+
+
+    }
+    //A comma-separated list of ingredients that the recipes should contain
+    //var ingredients = "";
+    //for (var i = 0; i < ingredientsArray.length; i++) {
+    //    ingredients += ingredientsArray[i];
+    //    return ingredients;
+    //};
+
+    //The maximum number of recipes to return (between 1 and 100). Defaults to 10
+    var number = 5;
+
+    //Whether to ignore typical pantry items, such as water, salt, flour, etc
+    var ignorePantry = true;
+
+    //Includes instructions in JSON object
+    var includeInstructions = true;
+
+    //DISPLAY VARIABLES
+    //Displays recipe instructiosn on page
+    //var displayInstructions = "";
+    //var displayTitle = "";
+    //var displayImage = "";
+
+    //Add an onclick "Next Recipe" to +1 the index
+    var index = 0;
+    document.getElementById("NextBtn").onclick = function () {
+        index++;
+        renderRecipe();
+
+   $("#homeButton").on("click", function () {
+    console.log("homeButton button has been clicked");
+
+    $("#homeButton").addClass("hidden");
+    $("#recipe-display").addClass("hidden");
+    $("#wine-display").addClass("hidden");
+    $("#search-options").removeClass("hidden");
+
+});
+
+
+    }
