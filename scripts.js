@@ -1,7 +1,17 @@
 $("document").ready(function () {
-    //store values of ingredients in Array
+
     var ingredientsArray = [];
     var recipeArray = [];
+
+    var apiKey = "9c7455831c634e4c8e907857c9b77b2c";
+
+    //PARAMETERS
+    //The maximum number of recipes to return (between 1 and 100). Defaults to 10
+    var number = 5;
+    //Whether to ignore typical pantry items, such as water, salt, flour, etc
+    var ignorePantry = true;
+    //Includes instructions in JSON object
+    var includeInstructions = true;
 
     document.getElementById("addIngrBtn").onclick = function () {
 
@@ -42,7 +52,7 @@ $("document").ready(function () {
             ingredients += "," + arrValue;
         }
 
-        
+
         var queryURL = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=" + apiKey + "&ingredients=" + ingredients + "&ignorePantry=" + ignorePantry + "&instructionsRequired=" + includeInstructions + "&number=" + number;
 
         $.ajax({
@@ -53,6 +63,10 @@ $("document").ready(function () {
             console.log(response[index].image);
             console.log(response[index].title);
             console.log(response[index].id);
+            console.log(response[index].missedIngredients[0].name);
+            recipeArray = response;
+
+            //function will append to webpag
             recipeArray = response;
 
             //displayImage = response[index].image;
@@ -72,9 +86,10 @@ $("document").ready(function () {
                 console.log(response);
                 console.log(response.instructions);
 
-                displayInstructions = response.instructions;
-                //code to append to webpage
+                $("#instruct").text(response.instructions);
+                $("#time").text(response.preparationMinutes + " minutes");
             });
+
         });
 
         console.log(ingredients);
@@ -83,60 +98,24 @@ $("document").ready(function () {
         $("#search-options").addClass("hidden");
 
     });
-    //The maximum number of recipes to return (between 1 and 100). Defaults to 10
-    var number = 5;
 
-    //Whether to ignore typical pantry items, such as water, salt, flour, etc
-    var ignorePantry = true;
 
-    //Includes instructions in JSON object
-    var includeInstructions = true;
+    //Displays API info to page
+    function renderRecipe() {
+        $("#apiTitle").text(recipeArray[index].title);
+        $(".recipe-img").attr("src", recipeArray[index].image);
+    }
 
-    //DISPLAY VARIABLES
-    //Displays recipe instructiosn on page
-    //var displayInstructions = "";
-    //var displayTitle = "";
-    //var displayImage = "";
 
-    //Add an onclick "Next Recipe" to +1 the index
+
+    //onclick "Next Recipe" to +1 the index
     var index = 0;
     document.getElementById("NextBtn").onclick = function () {
         index++;
+        renderRecipe();
 
     }
 
-    //Find recipe by ingredients
-    var apiKey = "9c7455831c634e4c8e907857c9b77b2c"
-    // var queryURL = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=" + apiKey + "&ingredients=" + ingredients + "&ignorePantry=" + ignorePantry + "&instructionsRequired=" + includeInstructions + "&number=" + number;
-
-    // $.ajax({
-    //     url: queryURL,
-    //     method: "GET"
-    // }).then(function (response) {
-    //     console.log(response);
-    //     console.log(response[index].image);
-    //     console.log(response[index].title);
-    //     console.log(response[index].id);
-
-    //     displayImage = response[index].image;
-    //     displayTitle = response[index].title;
-    //     //code to append to webpage
-
-    //     //This will get recipe instructions by the recipe ID
-    //     var recipeID = response[index].id;
-    //     var queryURL2 = "https://api.spoonacular.com/recipes/" + recipeID + "/information?apiKey=" + apiKey;
-
-    //     $.ajax({
-    //         url: queryURL2,
-    //         method: "GET"
-    //     }).then(function (response) {
-    //         console.log(response);
-    //         console.log(response.instructions);
-
-    //         displayInstructions = response.instructions;
-    //         //code to append to webpage
-    //     });
-    // });
 
 });
 
