@@ -1,7 +1,7 @@
 $("document").ready(function () {
     //store values of ingredients in Array
     var ingredientsArray = [];
-
+    var recipeArray = [];
 
     document.getElementById("addIngrBtn").onclick = function () {
 
@@ -9,7 +9,6 @@ $("document").ready(function () {
         if (ingredient.length === 0 || ingredient.length > 25) {
             alert ("you need to enter an ingredient");
         } else {
-
         let newItem = document.createElement("li")
         newItem.appendChild(document.createTextNode(ingredient));
         document.getElementById("ingredientList").appendChild(newItem);
@@ -42,6 +41,8 @@ $("document").ready(function () {
     //});
 
 
+    //var listItems = document.getElementById('ingredientList').getElementsByTagName('li');
+
 
     var ingredients = "";
     $("#recipe-query").on("click", function () {
@@ -65,10 +66,13 @@ $("document").ready(function () {
             console.log(response[index].image);
             console.log(response[index].title);
             console.log(response[index].id);
+            recipeArray = response;
 
-            displayImage = response[index].image;
-            displayTitle = response[index].title;
+            //displayImage = response[index].image;
+            //displayTitle = response[index].title;
             //code to append to webpage
+            //$("#apiTitle").text(displayTitle);
+            renderRecipe();
 
             //This will get recipe instructions by the recipe ID
             var recipeID = response[index].id;
@@ -93,6 +97,10 @@ $("document").ready(function () {
 
     });
 
+    function renderRecipe(){
+        $("#apiTitle").text(recipeArray[index].title);
+
+    }
     //A comma-separated list of ingredients that the recipes should contain
     //var ingredients = "";
     //for (var i = 0; i < ingredientsArray.length; i++) {
@@ -119,6 +127,7 @@ $("document").ready(function () {
     var index = 0;
     document.getElementById("NextBtn").onclick = function () {
         index++;
+        renderRecipe();
 
     }
 
