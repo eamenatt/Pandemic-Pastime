@@ -47,7 +47,7 @@
                   <span aria-hidden="true">&CircleTimes;</span>
                 </button>
               </div>
-            <form class="cell large-8" id="formID">
+            <form name="theform" class="cell large-8" id="formID">
                 <div class="search-box">
                     <label>
                         <h4>Select your ingredient(s):</h4>
@@ -70,10 +70,8 @@
             </div>
             <div class="card-section ingredients text-center">
                 <h2 class="article-title">Recipes by Ingredient</h2>
-                <!-- <p class="article-details">Enter the ingredients you have laying around the house below
-                    and we'll show you the best recipes
-                    including those items!</p> -->
-                <button id="recipe-query" class="button large search-btn" type="button">Recipe Search</button>
+                <p class="article-details">Raid the fridge and add an ingredient to search for recipes.</p>
+                <button id="recipe-query" class="button large search-btn disabled" type="button" disabled="disabled">Recipe Search</button>
             </div>
         </div>
 
@@ -84,9 +82,9 @@
                 <img class="search-img float-center" src="assets/photos/pairings.jpg" alt="food pairings">
                 <div class="card-section ingredients text-center">
                     <h2 class="article-title">Wine Pairings</h2>
-                    <!-- <p class="article-details">Enter a recipe ingredient to find a wine that pairs well with
-                        your meal!</p> -->
-                    <button id="wine-query" class="button large search-btn" type="button">Wine Pairings Search</button>
+                    <p class="article-details">Enter an ingredient to find a wine pairing for your
+                        your meal.</p>
+                    <button id="wine-query" class="button large search-btn disabled" type="button" disabled="disabled">Wine Pairings Search</button>
                 </div>
             </div>
         </div>
