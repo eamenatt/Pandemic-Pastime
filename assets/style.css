@@ -152,6 +152,10 @@ h3 {
     #recipe-title {
     background-color: #D0DFCF;
     }
+
+    #recipe-card {
+        overflow: auto;
+    }
     
     .recipe-img {
        align-items: center;
