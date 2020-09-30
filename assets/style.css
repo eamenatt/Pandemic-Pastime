@@ -36,6 +36,13 @@ h2 {
     color: #29231F;
 }
 
+h3 {
+    font-family: "Lilita One", cursive;
+    color: #29231F;
+}
+
+
+
 
 .ingredients {
     background-color: #D25129;
@@ -139,9 +146,9 @@ h2 {
 /* ___________________ PAIRINGS PAGE CSS ___________________ */
 
 .work-feature-block-image {
-  display: inline-block;
+  /* display: inline-block; */
   margin-top: 20px;
-  padding-right: 50px;
+  /* padding-right: 50px; */
 }
 
 .work-feature-block-header {  
@@ -149,16 +156,21 @@ h2 {
   margin: 20px;
   border-top: 1px solid #cacaca;
   border-bottom: 1px solid #cacaca;
+  background-color: #D0DFCF;
+  padding: 10px;
+  border-radius: 5px;
 }
+
+
 
 #wineName {
 margin-left: 2rem;
-font-size:1.5rem;
+/* font-size: 1.5rem; */
 }
 
 #wineDescrip {
 margin-left: 2rem;
-font-size:1.5rem;
+/* font-size: 1.5rem; */
 
 }
 
