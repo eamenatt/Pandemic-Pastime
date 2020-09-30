@@ -13,6 +13,9 @@
 body {
     background-color: rgb(255, 255, 255);
     color: #29231F;
+    min-height: 400px;
+    margin-bottom: 100px;
+    clear: both;
 }
 
 h2 {
@@ -43,6 +46,10 @@ h3 {
 
 .ingredients {
     background-color: #D25129;
+    color: rgb(255, 255, 255);
+}
+
+.ingredients h2 {
     color: rgb(255, 255, 255);
 }
 
@@ -90,7 +97,6 @@ h3 {
     color: #282516;
     opacity: 1;
     cursor: not-allowed;
-    pointer-events: none;
 }
 
 #search {
