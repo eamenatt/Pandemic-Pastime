@@ -2,8 +2,9 @@ $("document").ready(function () {
 
     var ingredientsArray = [];
     var recipeArray = [];
+    var index = 0;
 
-    var apiKey = "a1c045aa978d4b2aa996335a36aa9d42";
+    var apiKey = "b89438ed3263484c80550ee32471ab68";
 
     //PARAMETERS
     //The maximum number of recipes to return (between 1 and 100). Defaults to 10
@@ -18,14 +19,10 @@ $("document").ready(function () {
     document.getElementById("addIngrBtn").onclick = function () {
 
         let ingredient = document.getElementById("ingredient").value;
-        if (ingredient.length === 0 || ingredient.length > 25) {
-            // alert ("you need to enter an ingredient");
-            $("#alert-box").removeClass("hidden");
-        } else {
+        if (ingredient.length > 0 || ingredientsArray.length > 0) {
             let newItem = document.createElement("li")
             newItem.appendChild(document.createTextNode(ingredient));
             document.getElementById("ingredientList").appendChild(newItem);
-
             document.getElementById("ingredient").value = "";
 
             // Enable search button click after form input is valid
@@ -34,6 +31,10 @@ $("document").ready(function () {
             document.getElementById("wine-query").classList.remove("disabled");
             document.getElementById("recipe-query").classList.remove("disabled");
 
+
+        } else {
+            // alert ("you need to enter an ingredient");
+             $("#alert-box").removeClass("hidden");
 
         }
     }
@@ -74,18 +75,27 @@ $("document").ready(function () {
             method: "GET"
         }).then(function (response) {
             console.log(response);
-            console.log(response[index].image);
-            console.log(response[index].title);
-            console.log(response[index].id);
-            console.log(response[index].missedIngredients[0].name);
+            console.log(response[0].image);
+            console.log(response[0].title);
+            console.log(response[0].id);
+            for (var i = 0; i < response[0].missedIngredients.length; i++) {
+                console.log(response[0].missedIngredients[i].name);
+                let newItem = document.createElement("li")
+                newItem.appendChild(document.createTextNode(response[0].missedIngredients[i].name));
+                document.getElementById("ingredientDisplay").appendChild(newItem);
+                
+            }
+           
 
+            
+           
 
             //function will append to webpag
             recipeArray = response;
-            renderRecipe();
+            // renderRecipe();
 
             //This will get recipe instructions by the recipe ID
-            var recipeID = response[index].id;
+            var recipeID = response[0].id;
             var queryURL2 = "https://api.spoonacular.com/recipes/" + recipeID + "/information?apiKey=" + apiKey;
 
             $.ajax({
@@ -95,8 +105,18 @@ $("document").ready(function () {
                 console.log(response);
                 console.log(response.instructions);
 
+                $("#apiTitle").text(recipeArray[index].title);
+                $(".recipe-img").attr("src", recipeArray[index].image);
                 $("#instruct").text(response.instructions);
                 $("#time").text(response.preparationMinutes + " minutes");
+
+                for (i=0; i < ingredientsArray.length; i++) {
+                    let newItem = document.createElement("li")
+                    newItem.appendChild(document.createTextNode(ingredients[i]));
+                    document.getElementById("ingredientDisplay").appendChild(newItem);
+                }
+
+                
             });
 
         });
@@ -197,6 +217,8 @@ $("document").ready(function () {
     function renderRecipe() {
         $("#apiTitle").text(recipeArray[index].title);
         $(".recipe-img").attr("src", recipeArray[index].image);
+        // $("#instruct").text(response.instructions);
+        // $("#time").text(response.preparationMinutes + " minutes");
     }
 
 
@@ -215,6 +237,15 @@ $("document").ready(function () {
             console.log(arrValue);
         }
 
+        $("#homeButton").addClass("hidden");
+        $("#recipe-display").addClass("hidden");
+        $("#wine-display").addClass("hidden");
+        $("#search-options").removeClass("hidden");
+        let parent = document.getElementById("ingredientDisplay");
+        while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+      
         var apiKey = "bfc7bebd&app_key=21bb623fe4e3afd71090437be434a117"
         var queryURL = "https://api.edamam.com/api/food-database/v2/parser?ingr=" + ingredients + "&app_id=" + apiKey;
 
@@ -234,10 +265,10 @@ $("document").ready(function () {
     })
         //Add an onclick "Next Recipe" to +1 the index
         var index = 0;
-        document.getElementById("NextBtn").onclick = function () {
-            index++;
-            renderRecipe();
-        }
+        // document.getElementById("NextBtn").onclick = function () {
+        //     index++;
+        //     renderRecipe();
+        // }
 
 
         //CLICK Functions
