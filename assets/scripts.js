@@ -4,7 +4,7 @@ $("document").ready(function () {
     var recipeArray = [];
     var index = 0;
 
-    var apiKey = "41e877c90d244ab6a5620b9a76f2e764";
+    var apiKey = "b89438ed3263484c80550ee32471ab68";
 
     //PARAMETERS
     //The maximum number of recipes to return (between 1 and 100). Defaults to 10
@@ -265,10 +265,10 @@ $("document").ready(function () {
     })
         //Add an onclick "Next Recipe" to +1 the index
         var index = 0;
-        document.getElementById("NextBtn").onclick = function () {
-            index++;
-            renderRecipe();
-        }
+        // document.getElementById("NextBtn").onclick = function () {
+        //     index++;
+        //     renderRecipe();
+        // }
 
 
         //CLICK Functions
