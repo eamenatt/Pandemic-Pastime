@@ -186,14 +186,14 @@ $("document").ready(function () {
         $("#wine-display").removeClass("hidden");
         $("#search-options").addClass("hidden");
     });
-//Clicking on t
-        $("#backBtn").on("click", function () {
-            
-            $("#wine-display").addClass("hidden");
-            $("#search-options").removeClass("hidden");
-            $("#homeButton").addClass("hidden");
+    //Clicking on t
+    $("#backBtn").on("click", function () {
 
-        })
+        $("#wine-display").addClass("hidden");
+        $("#search-options").removeClass("hidden");
+        $("#homeButton").addClass("hidden");
+
+    })
 
     //Displays API info to page
     function renderRecipe() {
@@ -265,6 +265,26 @@ $("document").ready(function () {
         $("#search-options").removeClass("hidden");
 
     });
+
+    $("#recipe-query").on("click", function () {
+        console.log("Recipe search button has been clicked");
+
+        $("#homeButton").removeClass("hidden");
+        $("#recipe-display").removeClass("hidden");
+        $("#search-options").addClass("hidden");
+
+    });
+
+    $("#wine-query").on("click", function () {
+        console.log("wine pairing button has been clicked");
+
+        $("#homeButton").removeClass("hidden");
+        $("#wine-display").removeClass("hidden");
+        $("#search-options").addClass("hidden");
+
+    });
+
+
 
     // Onclick event to close alert box pop up on homepage
     $("#close-btn").on("click", function () {
