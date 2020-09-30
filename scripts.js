@@ -3,7 +3,7 @@ $("document").ready(function () {
     var ingredientsArray = [];
     var recipeArray = [];
 
-    var apiKey = "78d70e51419243b7b009c0a352741717";
+    var apiKey = "a1c045aa978d4b2aa996335a36aa9d42";
 
     //PARAMETERS
     //The maximum number of recipes to return (between 1 and 100). Defaults to 10

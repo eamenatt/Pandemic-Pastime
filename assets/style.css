@@ -8,10 +8,20 @@
     main headers: Google Font: Lilita One (link for html header below)
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">  */
 
-
+/* General Styles */
 
 body {
     background-color: rgb(255, 255, 255);
+    color: #29231F;
+}
+
+h2 {
+    font-family: "Lilita One", cursive;
+    color: #29231F;
+}
+
+h3 {
+    font-family: "Lilita One", cursive;
     color: #29231F;
 }
 
@@ -30,19 +40,6 @@ body {
     color: #D25129;
     font-size: 4em;
 }
-
-h2 {
-    font-family: "Lilita One", cursive;
-    color: #29231F;
-}
-
-h3 {
-    font-family: "Lilita One", cursive;
-    color: #29231F;
-}
-
-
-
 
 .ingredients {
     background-color: #D25129;
@@ -138,11 +135,36 @@ h3 {
     padding: 5px;
     font-weight: bold;
     }
-
+    
+    #recipe-title {
+    background-color: #D0DFCF;
+    }
+    
     .recipe-img {
        align-items: center;
        margin-top: 25px;
+       border-radius: 10px;
     }
+
+    #nutri-info {
+        border: 2px #D0DFCF solid;
+        border-radius: 15px;
+        margin-top: 25px;
+    }
+
+    .button-group .button {
+        margin-top: 60px;
+    }
+
+    .recipeBtnStyle {
+        border-radius: 20px;
+        background-color: #D25129;
+        color: rgb(255, 255, 255) ;
+        font-size: 20px;
+        padding: 15px;
+        width: 175px;
+
+}
 /* ___________________ PAIRINGS PAGE CSS ___________________ */
 
 .work-feature-block-image {

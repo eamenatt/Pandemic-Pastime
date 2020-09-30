@@ -101,14 +101,13 @@
                 </div>
 
                 <div class="grid-x row large-12">
-                    <div class="large-4"></div>
-                    <div class="article-title column large-8 text-center">
-                        <h3 id="apiTitle">Title of Recipe</h3>
+                    <div id="recipe-title" class="article-title column large-12 text-center">
+                        <h2 id="apiTitle">Title of Recipe</h2>
                     </div>
                 </div>
 
                 <!-- Recipe Info Card -->
-                <div class="grid-x row large-12 align-spaced">
+                <div id="recipe-card" class="grid-x row large-12 align-spaced">
                     <!-- Recipe Image -->
                     <div class="card-image large-4 columns text-center">
                         <img class="recipe-img" src="assets/photos/meal.jpg" alt="placeholder image">
@@ -120,9 +119,9 @@
                             <h3 class="article-title">Preparation Time</h3>
                             <p class="article-details" id="time">XX Minutes</p>
 
-                        </div>
+                        
 
-                        <div class="card-section">
+                            <!-- <div class="card-section"> -->
                             <div class="article-title">
                                 <h3>Ingredients</h3>
                             </div>
@@ -131,6 +130,7 @@
                                     <li>Ingredient 1</li>
                                 </ul>
                             </div>
+                            <!-- </div> -->
                         </div>
                     </div>
 
@@ -147,7 +147,7 @@
 
                 <!-- Nutritional Data & Recipe Control Buttons -->
                 <div class="grid-x row large-12 align-spaced">
-                    <div class="card-flex-article-card large-5 columns">
+                    <div id="nutri-info" class="card-flex-article-card large-5 columns">
                         <div class="card-section nurtional-data">
                             <h3 class="article-title">Nutritional Data</h3>
                             <ul class="info article-details">
@@ -159,11 +159,11 @@
                     <div class="card-flex-article-card large-7 columns">
                         <div class="card-section recipe-buttons">
                             <div class="button-group align-spaced">
-                                <button id="NextBtn" class="button large searchBtnStyle"> Next Recipe </button>
-                                <button id="printBtn" class="button large searchBtnStyle" onclick="window.print()">
+                                <button id="NextBtn" class="button large recipeBtnStyle"> Next Recipe </button>
+                                <button id="printBtn" class="button large recipeBtnStyle" onclick="window.print()">
                                     Print Recipe
                                 </button>
-                                <button id="ShareBtn" class="button large searchBtnStyle"> Share Recipes </button>
+                                <!-- <button id="ShareBtn" class="button large recipeBtnStyle"> Share Recipes </button> -->
                             </div>
                         </div>
                     </div>
