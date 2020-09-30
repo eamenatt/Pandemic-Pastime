@@ -102,6 +102,7 @@ h3 {
 .search-box {
     padding-top: 20px;
 }
+
 .fieldset {
     color: #D25129;
 }
@@ -110,6 +111,11 @@ h3 {
     display: none;
 }
 
+.recipe-img {
+       align-items: center;
+       margin-top: 25px;
+    }
+/* Ingredients search bar, buttons. & Lis */
 .searchBtnStyle {
     border-radius: 20px;
     background-color: #D25129;
@@ -128,6 +134,7 @@ h3 {
     list-style-position:inside;
     float: left;
     margin-left: 15px;
+    margin-bottom: 3px;
     background-color: #D25129;
     color: rgb(255, 255, 255) ;
     list-style: none;
@@ -165,6 +172,13 @@ h3 {
         width: 175px;
 
 }
+
+#searchHeader {
+    font-family: "Lilita One", cursive;
+    font-size: 1.5rem;
+}
+
+    
 /* ___________________ PAIRINGS PAGE CSS ___________________ */
 
 .work-feature-block-image {
