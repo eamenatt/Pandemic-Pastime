@@ -227,7 +227,7 @@ $("document").ready(function () {
             for (var i = 0; i < response.parsed.length; i++) { 
             console.log (response.parsed[i]);
             console.log (response.parsed[i].food.nutrients);
-            $('#nutri-info').append(`<li>${response.parsed[i].food.nutrients}</li>`);
+            $('#nutri-info').append(`<li>${JSON.stringify(response).parsed[i].food.nutrients}</li>`);
 
             };
         })
