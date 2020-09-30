@@ -197,11 +197,6 @@ $("document").ready(function () {
     }
 
 
-    function renderRecipe() {
-        $("#apiTitle").text(recipeArray[index].title);
-
-
-    }
     
     // //EDAMAM API Functionality
     // var apiKey = "5af669d7&app_key=0e4731f25a5a58164ba637134657aa87"
