@@ -78,7 +78,7 @@ $("document").ready(function () {
             console.log(response[index].title);
             console.log(response[index].id);
             console.log(response[index].missedIngredients[0].name);
-           
+
 
             //function will append to webpag
             recipeArray = response;
@@ -107,7 +107,7 @@ $("document").ready(function () {
         $("#search-options").addClass("hidden");
 
     });
-//Wine pairing search button & API call
+    //Wine pairing search button & API call
     $("#wine-query").on("click", function () {
         console.log("Wine pairing button has been clicked");
 
@@ -129,16 +129,16 @@ $("document").ready(function () {
             // console.log(response[index].imageUrl);
             // console.log(response[index].title);
             // console.log(response[index].id);
-           
+
             WinePairArray = response;
 
             $("#wineName").text(response.pairedWines[0]);
             $("#wineDescrip").text(response.pairingText);
 
-             
-               
+
+
         });
-           
+
         $("#wine-display").removeClass("hidden");
         $("#search-options").addClass("hidden");
     });
@@ -189,7 +189,7 @@ $("document").ready(function () {
         $("#wine-display").addClass("hidden");
         $("#search-options").removeClass("hidden");
         $("#homeButton").addClass("hidden");
-        
+
 
     })
 
@@ -200,63 +200,83 @@ $("document").ready(function () {
     }
 
 
-    
+
     // //EDAMAM API Functionality
-    // var apiKey = "5af669d7&app_key=0e4731f25a5a58164ba637134657aa87"
-    // var queryURL = "https://api.edamam.com/api/food-database/v2/parser?ingr=" + ingredient + "&app_id=" + apiKey;
 
-    // $.ajax({
-    //   url: queryURL,
-    //   method: "GET"
-    // }).then(function (response) {
-    //   console.log(response);
-    // });
-
-    //Add an onclick "Next Recipe" to +1 the index
-    var index = 0;
-    document.getElementById("NextBtn").onclick = function () {
-        index++;
-        renderRecipe();
-    }
-
-
-    //CLICK Functions
-    $("#homeButton").on("click", function () {
-        console.log("homeButton button has been clicked");
-
-        $("#homeButton").addClass("hidden");
-        $("#recipe-display").addClass("hidden");
-        $("#wine-display").addClass("hidden");
-        $("#search-options").removeClass("hidden");
-
-    });
-
+    var ingredients = "";
     $("#recipe-query").on("click", function () {
-        console.log("Recipe search button has been clicked");
+        console.log("Ready to display nutritional data");
 
-        $("#homeButton").removeClass("hidden");
-        $("#recipe-display").removeClass("hidden");
-        $("#search-options").addClass("hidden");
+        var list = document.getElementById('ingredientList').childNodes;
+        for (var i = 0; i < list.length; i++) {
+            var arrValue = list[i].innerHTML;
+            ingredientsArray.push(arrValue);
+            ingredients += "," + arrValue;
+            console.log(arrValue);
+        }
+
+        var apiKey = "bfc7bebd&app_key=21bb623fe4e3afd71090437be434a117"
+        var queryURL = "https://api.edamam.com/api/food-database/v2/parser?ingr=" + ingredients + "&app_id=" + apiKey;
+
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            for (var i = 0; i < response.parsed.length; i++) { 
+            console.log (response.parsed[i]);
+            console.log (response.parsed[i].food.nutrients);
+            $('#nutri-info').append(`<li>${JSON.stringify(response).parsed[i].food.nutrients}</li>`);
+
+            };
+        })
+    })
+        //Add an onclick "Next Recipe" to +1 the index
+        var index = 0;
+        document.getElementById("NextBtn").onclick = function () {
+            index++;
+            renderRecipe();
+        }
+
+
+        //CLICK Functions
+        $("#homeButton").on("click", function () {
+            console.log("homeButton button has been clicked");
+
+            $("#homeButton").addClass("hidden");
+            $("#recipe-display").addClass("hidden");
+            $("#wine-display").addClass("hidden");
+            $("#search-options").removeClass("hidden");
+
+        });
+
+        $("#recipe-query").on("click", function () {
+            console.log("Recipe search button has been clicked");
+
+            $("#homeButton").removeClass("hidden");
+            $("#recipe-display").removeClass("hidden");
+            $("#search-options").addClass("hidden");
+
+        });
+
+        $("#wine-query").on("click", function () {
+            console.log("wine pairing button has been clicked");
+
+            $("#homeButton").removeClass("hidden");
+            $("#wine-display").removeClass("hidden");
+            $("#search-options").addClass("hidden");
+
+        });
+
+
+
+        // Onclick event to close alert box pop up on homepage
+        $("#close-btn").on("click", function () {
+
+            $("#alert-box").addClass("hidden");
+
+        });
+
 
     });
-
-    $("#wine-query").on("click", function () {
-        console.log("wine pairing button has been clicked");
-
-        $("#homeButton").removeClass("hidden");
-        $("#wine-display").removeClass("hidden");
-        $("#search-options").addClass("hidden");
-
-    });
-
-
-
-    // Onclick event to close alert box pop up on homepage
-    $("#close-btn").on("click", function () {
-
-        $("#alert-box").addClass("hidden");
-
-    });
-
-
-});
