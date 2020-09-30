@@ -45,6 +45,8 @@ $("document").ready(function () {
             parent.removeChild(parent.firstChild);
         }
         ingredientsArray = [];
+        document.getElementById("wine-query").disabled = true;
+        document.getElementById("recipe-query").disabled = true;
     }
 
     document.getElementById("formID").addEventListener("submit", function (e) {
@@ -187,6 +189,7 @@ $("document").ready(function () {
         $("#wine-display").addClass("hidden");
         $("#search-options").removeClass("hidden");
         $("#homeButton").addClass("hidden");
+        
 
     })
 
