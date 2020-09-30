@@ -3,7 +3,7 @@ $("document").ready(function () {
     var ingredientsArray = [];
     var recipeArray = [];
 
-    var apiKey = "41e877c90d244ab6a5620b9a76f2e764";
+    var apiKey = "a1c045aa978d4b2aa996335a36aa9d42";
 
     //PARAMETERS
     //The maximum number of recipes to return (between 1 and 100). Defaults to 10
@@ -45,6 +45,8 @@ $("document").ready(function () {
             parent.removeChild(parent.firstChild);
         }
         ingredientsArray = [];
+        document.getElementById("wine-query").disabled = true;
+        document.getElementById("recipe-query").disabled = true;
     }
 
     document.getElementById("formID").addEventListener("submit", function (e) {
@@ -187,6 +189,7 @@ $("document").ready(function () {
         $("#wine-display").addClass("hidden");
         $("#search-options").removeClass("hidden");
         $("#homeButton").addClass("hidden");
+        
 
     })
 
