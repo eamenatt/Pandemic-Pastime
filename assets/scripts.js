@@ -3,7 +3,7 @@ $("document").ready(function () {
     var ingredientsArray = [];
     var recipeArray = [];
 
-    var apiKey = "78d70e51419243b7b009c0a352741717";
+    var apiKey = "41e877c90d244ab6a5620b9a76f2e764";
 
     //PARAMETERS
     //The maximum number of recipes to return (between 1 and 100). Defaults to 10
@@ -76,15 +76,10 @@ $("document").ready(function () {
             console.log(response[index].title);
             console.log(response[index].id);
             console.log(response[index].missedIngredients[0].name);
-            recipeArray = response;
+           
 
             //function will append to webpag
             recipeArray = response;
-
-            //displayImage = response[index].image;
-            //displayTitle = response[index].title;
-            //code to append to webpage
-            //$("#apiTitle").text(displayTitle);
             renderRecipe();
 
             //This will get recipe instructions by the recipe ID
@@ -109,6 +104,41 @@ $("document").ready(function () {
         $("#recipe-display").removeClass("hidden");
         $("#search-options").addClass("hidden");
 
+    });
+//Wine pairing search button & API call
+    $("#wine-query").on("click", function () {
+        console.log("Wine pairing button has been clicked");
+
+        var list = document.getElementById('ingredientList').childNodes;
+        for (var i = 0; i < list.length; i++) {
+            var arrValue = list[i].innerHTML;
+            ingredientsArray.push(arrValue);
+            ingredients = arrValue
+        }
+
+
+        var queryURL = "https://api.spoonacular.com/food/wine/pairing?food=" + ingredients + "&apiKey=" + apiKey;
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            // console.log(response[index].imageUrl);
+            // console.log(response[index].title);
+            // console.log(response[index].id);
+           
+            WinePairArray = response;
+
+            $("#wineName").text(response.pairedWines[0]);
+            $("#wineDescrip").text(response.pairingText);
+
+             
+               
+        });
+           
+        $("#wine-display").removeClass("hidden");
+        $("#search-options").addClass("hidden");
     });
 
 
@@ -151,7 +181,7 @@ $("document").ready(function () {
         $("#wine-display").removeClass("hidden");
         $("#search-options").addClass("hidden");
     });
-    //Clicking on t
+    //Clicking on the button on the winepairins page
     $("#backBtn").on("click", function () {
 
         $("#wine-display").addClass("hidden");
@@ -166,49 +196,23 @@ $("document").ready(function () {
         $(".recipe-img").attr("src", recipeArray[index].image);
     }
 
-    function renderWinePairing() {
-        $("#wineName").text(WinePairArray[index].pairedWines[0]);
-    }
-
-
-
-    //onclick "Next Recipe" to +1 the index
-    var index = 0;
-    document.getElementById("NextBtn").onclick = function () {
-        index++;
-        renderRecipe();
-
-
-    }
-
-
 
     function renderRecipe() {
         $("#apiTitle").text(recipeArray[index].title);
 
 
     }
-    //A comma-separated list of ingredients that the recipes should contain
-    //var ingredients = "";
-    //for (var i = 0; i < ingredientsArray.length; i++) {
-    //    ingredients += ingredientsArray[i];
-    //    return ingredients;
-    //};
+    
+    // //EDAMAM API Functionality
+    // var apiKey = "5af669d7&app_key=0e4731f25a5a58164ba637134657aa87"
+    // var queryURL = "https://api.edamam.com/api/food-database/v2/parser?ingr=" + ingredient + "&app_id=" + apiKey;
 
-    //The maximum number of recipes to return (between 1 and 100). Defaults to 10
-    var number = 5;
-
-    //Whether to ignore typical pantry items, such as water, salt, flour, etc
-    var ignorePantry = true;
-
-    //Includes instructions in JSON object
-    var includeInstructions = true;
-
-    //DISPLAY VARIABLES
-    //Displays recipe instructiosn on page
-    //var displayInstructions = "";
-    //var displayTitle = "";
-    //var displayImage = "";
+    // $.ajax({
+    //   url: queryURL,
+    //   method: "GET"
+    // }).then(function (response) {
+    //   console.log(response);
+    // });
 
     //Add an onclick "Next Recipe" to +1 the index
     var index = 0;
@@ -217,6 +221,8 @@ $("document").ready(function () {
         renderRecipe();
     }
 
+
+    //CLICK Functions
     $("#homeButton").on("click", function () {
         console.log("homeButton button has been clicked");
 
